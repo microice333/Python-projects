@@ -1,9 +1,11 @@
-#generate pi to nth digit
-# Chudnovsky algorihtm from https://en.wikipedia.org/wiki/Chudnovsky_algorithm
+# generate pi to nth digit
+# Chudnovsky algorihtm to find pi to n-th digit
+# from https://en.wikipedia.org/wiki/Chudnovsky_algorithm
 import decimal
 
+
 def compute_pi(n):
-    decimal.getcontext().prec = n
+    decimal.getcontext().prec = n + 1
     C = 426880 * decimal.Decimal(10005).sqrt()
     K = 6.
     M = 1.
@@ -18,5 +20,10 @@ def compute_pi(n):
     pi = C / S
     return pi
 
-n = int(input())
-print (compute_pi(n))
+
+while True:
+    n = int(input("Please type number between 0-1000"))
+    if n >= 0 and n <= 1000:
+        break
+
+print(compute_pi(n))
