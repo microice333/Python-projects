@@ -10,6 +10,7 @@ def fib_sequence(n):
         seq.append(current)
     return seq
 
+
 n = int(input("Type the index of last fibonnaci number:"))
 fib_numbers = fib_sequence(n)
-print (fib_numbers)
+print(fib_numbers)
